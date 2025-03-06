@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Viktoriia-code/trip-cost-calculator.git'
+                git branch: 'main', url: 'https://github.com/Viktoriia-code/trip-cost-calculator.git'
             }
         }
         stage('Build') {

@@ -51,19 +51,17 @@ pipeline {
                         }
                     }
                 }
-                stage('Build Docker Image') {
+        stage('Build Docker Image') {
                     steps {
                         script {
                             bat "docker build -t ${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG} ."
                         }
                     }
                 }
-                stage('Push Docker Image to Docker Hub') {
-                    steps {
-                        script {
-                            bat "docker push ${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
-                        }
-                    }
+        stage('Push Docker Image to Docker Hub') {
+            steps {
+                script {
+                    bat "docker push ${DOCKERHUB_REPO}:${DOCKER_IMAGE_TAG}"
                 }
             }
         }
